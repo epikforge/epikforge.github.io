@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+    @apply text-5xl;
+}
+h2 {
+    @apply text-2xl;
+}
+
+.title {
+    @apply my-4 bg-yellow-100 bg-opacity-20 px-2 py-1 inline-block border-l-8 border-yellow-500;
+}
+
+.highlight {
+    @apply bg-yellow-100 bg-opacity-20 px-2 py-1 inline-block;
+}
+
+.standard-link {
+    @apply text-pink-300 hover:text-pink-400;
+}
+
+.block {
+    @apply mt-4 mb-16;
+}
