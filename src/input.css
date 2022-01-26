@@ -24,3 +24,7 @@ h2 {
 .block {
     @apply mt-4 mb-16;
 }
+
+.line {
+    @apply bg-gradient-to-b from-yellow-200 to-yellow-500 transition-all duration-200 ease-in-out;
+}

@@ -502,6 +502,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -706,6 +710,16 @@ h2 {
 .block {
   margin-top: 1rem;
   margin-bottom: 4rem;
+}
+
+.line {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: #fef08a;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(254 240 138 / 0));
+  --tw-gradient-to: #eab308;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 1024px) {

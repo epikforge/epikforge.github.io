@@ -59,5 +59,38 @@
   </div>
 </div>
 <script src="js/epikforge.js"></script>
+<script>
+  let zip = document.querySelector('input[name="zip"]');
+  let city = document.querySelector('input[name="city"]');
+  let zipLeft = zip.getBoundingClientRect().left + zip.getBoundingClientRect().width;
+  let zipTop = zip.getBoundingClientRect().top + zip.getBoundingClientRect().height/2;
+  let cityTop = city.getBoundingClientRect().top + city.getBoundingClientRect().height/2;
+  // Connect zip and city with a line
+  let line = document.createElement('div');
+  line.classList.add('line');
+  line.style.position = 'absolute';
+  line.style.left = zipLeft + 'px';
+  line.style.top = zipTop + 'px';
+  line.style.width = '50px';
+  line.style.height = '0px';
+  document.body.appendChild(line);
+  var timer = 0;
+  var timer2 = 0;
+  zip.addEventListener('keyup', function(e) {
+    line.style.top = zipTop + 'px';
+    line.style.height = '0px';
+    clearTimeout(timer)
+    clearTimeout(timer2)
+    if(zip.value.length >= 4) {
+      timer = setTimeout(function () {
+        line.style.height = cityTop - zipTop + 'px';
+        timer2 = setTimeout(function () {
+          line.style.top = zipTop + cityTop - zipTop + 'px';
+          line.style.height = '0px';
+        }, 300);
+      }, 250)
+    }
+  });
+</script>
 </body>
 </html>
