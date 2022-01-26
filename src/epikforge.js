@@ -28,7 +28,9 @@ if(zip && city) {
                 return response.json();
             })
             .then(function(data) {
-                city.value = data.places[0]['place name'];
+                if(data.places && data.places.length > 0) {
+                    city.value = data.places[0]['place name'];
+                }
             });
     }, 500),500);
 }
