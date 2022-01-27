@@ -14,15 +14,13 @@ function delay(callback, ms) {
     };
 }
 
-let zip = document.querySelector('input[data-zip]');
-let city = document.querySelector('input[data-city]');
-if(zip && city) {
-    let country = zip.getAttribute('data-country');
-    if(country === null) country = 'hu';
-    // add event listener with delay
-    zip.addEventListener('input', delay(function(e) {
-        let zip = e.target.value;
-        let url = 'https://api.zippopotam.us/' + country + '/' + zip;
+document.querySelectorAll('input[data-zip]').forEach(zip => {
+    zip.addEventListener('input', delay((e) => {
+        let country = zip.getAttribute('data-country');
+        let target = zip.getAttribute('data-zip');
+        let city = document.querySelector('input[name="'+target+'"]');
+        if(country === null) country = 'hu';
+        let url = 'https://api.zippopotam.us/' + country + '/' + zip.value;
         fetch(url)
             .then(function(response) {
                 return response.json();
@@ -32,8 +30,9 @@ if(zip && city) {
                     city.value = data.places[0]['place name'];
                 }
             });
-    }, 500),500);
-}
+    },500),500);
+});
+
 var smoothscroll = require('smoothscroll-polyfill');
 smoothscroll.polyfill();
 

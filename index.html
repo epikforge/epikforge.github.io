@@ -43,25 +43,26 @@
   <div class="block">
     <h2 class="title" id="zipCodes">4. Irányítószámból város</h2>
     <p class="my-2">
-      Ehhez a működéshez 2 input mezőre kell ráraknod: <span class="highlight">data-zip</span> és <span class="highlight">data-city</span>. <br>
-      A data-zip mellé megadható egy data-country is, ami alapértelmezetten a magyarországra van beállítva, ha nem adod meg. <br>
+      Ehhez a működéshez 1 input mezőre kell ráraknod: <span class="highlight">data-zip="célpont"</span> <br>
+      A célpont ebben az esetben az az input mező, amelybe a város nevét szeretnéd megjelentetni. <br>
+      A data-zip mellé megadható egy data-country is ha nem magyarországi irányítószámok között akarsz keresni. <br>
       Próbáld ki, írd be az irányítószámodat az input mezőbe:
     </p>
     <div class="grid grid-cols-1 gap-2">
-      <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="zip" value='' data-zip placeholder="zip">
-      <div class="text-xs mb-4">&lt;input type="text" name="zip" value='' data-zip&gt;
+      <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="billing_zip" value='' data-zip="billing_city" placeholder="zip">
+      <div class="text-xs mb-4">&lt;input type="text" name="billing_zip" <span class="highlight">data-zip="billing_city"</span>&gt;
         <div class="mt-3">Eltérő ország esetén, például Szlovákiai irányítószámokhoz:</div>
-        <span class="text-xs mb-4">&lt;input type="text" name="zip" value='' data-zip <span class="highlight">data-country="sk"</span>&gt;</span>
+        <span class="text-xs mb-4">&lt;input type="text" name="billing_zip" data-zip="billing_city" <span class="highlight">data-country="sk"</span>&gt;</span>
       </div>
-      <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="city" value='' data-city placeholder="city">
-      <div class="text-xs mb-4">&lt;input type="text" name="city" value='' data-city&gt;</div>
+      <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="billing_city" value='' placeholder="city">
+      <div class="text-xs mb-4">&lt;input type="text" <span class="highlight">name="billing_city</span>"&gt;</div>
     </div>
   </div>
 </div>
 <script src="js/epikforge.js"></script>
 <script>
-  let zip = document.querySelector('input[name="zip"]');
-  let city = document.querySelector('input[name="city"]');
+  let zip = document.querySelector('input[name="billing_zip"]');
+  let city = document.querySelector('input[name="billing_city"]');
   let zipLeft = zip.getBoundingClientRect().left + zip.getBoundingClientRect().width;
   let zipTop = zip.getBoundingClientRect().top + zip.getBoundingClientRect().height/2;
   let cityTop = city.getBoundingClientRect().top + city.getBoundingClientRect().height/2;
