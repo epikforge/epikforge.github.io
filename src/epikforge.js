@@ -14,10 +14,10 @@ function delay(callback, ms) {
     };
 }
 
-document.querySelectorAll('input[data-zip]').forEach(zip => {
+document.querySelectorAll('input[data-city-to]').forEach(zip => {
     zip.addEventListener('input', delay((e) => {
         let country = zip.getAttribute('data-country');
-        let target = zip.getAttribute('data-zip');
+        let target = zip.getAttribute('data-city-to');
         let city = document.querySelector('input[name="'+target+'"]');
         if(country === null) country = 'hu';
         let url = 'https://api.zippopotam.us/' + country + '/' + zip.value;

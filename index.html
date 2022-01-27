@@ -44,16 +44,16 @@
     <h2 class="title" id="zipCodes">4. Irányítószámból város</h2>
     <p class="my-2">
       Ha a felhasználó begépel egy irányítószámot, akkor a város mezőbe automatikusan kitöltődik a város neve.<br>
-      Ehhez az input mezőre kell ráraknod a következőt: <span class="highlight">data-zip="célpont"</span> <br>
+      Ehhez az input mezőre kell ráraknod a következőt: <span class="highlight">data-city-to="célpont"</span> <br>
       A célpont ebben az esetben az az input mező neve, amelybe a város nevét szeretnéd megjelentetni. <span class="highlight">name="célpont"</span> <br>
-      A data-zip mellé megadható egy data-country is ha nem magyarországi irányítószámok között akarsz keresni. <br>
+      A data-city-to mellé megadható egy data-country is ha nem magyarországi irányítószámok között akarsz keresni. <br>
       Próbáld ki, írd be az irányítószámodat az input mezőbe:
     </p>
     <div class="grid grid-cols-1 gap-2">
-      <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="billing_zip" value='' data-zip="billing_city" placeholder="zip">
-      <div class="text-xs mb-4">&lt;input type="text" name="billing_zip" <span class="highlight">data-zip="billing_city"</span>&gt;
+      <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="billing_zip" value='' data-city-to="billing_city" placeholder="zip">
+      <div class="text-xs mb-4">&lt;input type="text" name="billing_zip" <span class="highlight">data-city-to="billing_city"</span>&gt;
         <div class="mt-3">Eltérő ország esetén, például Szlovákiai irányítószámokhoz:</div>
-        <span class="text-xs mb-4">&lt;input type="text" name="billing_zip" data-zip="billing_city" <span class="highlight">data-country="sk"</span>&gt;</span>
+        <span class="text-xs mb-4">&lt;input type="text" name="billing_zip" data-city-to="billing_city" <span class="highlight">data-country="sk"</span>&gt;</span>
       </div>
       <input class="w-1/2 outline-none text-black border-2 p-2" type="text" name="billing_city" value='' placeholder="city">
       <div class="text-xs mb-4">&lt;input type="text" <span class="highlight">name="billing_city</span>"&gt;</div>
