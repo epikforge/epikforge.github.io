@@ -7,7 +7,7 @@
   "scripts": {
     "production": "npx tailwindcss -i ./src/input.css -o ./css/main.css",
     "watch": "npx tailwindcss -i ./src/input.css -o ./css/main.css --watch",
-    "epikjs": "browserify src/epikforge.js -o js/epikforge.js; uglifyjs js/epikforge.js -o js/epikforge.js",
+    "epikjs": "browserify src/epikforge.js -o js/epikforge.js; uglifyjs js/epikforge.js -o js/epikforge.js -c -m",
     "ugly": "uglifyjs src/epikforge.js -o js/epikforge.js"
   }
 }
