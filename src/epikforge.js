@@ -50,6 +50,11 @@ document.querySelectorAll('a').forEach(a => {
                 });
             }
         } else {
+            // if a variable has target="_blank" then open in new tab
+            if(a.getAttribute('target') === '_blank') {
+                window.open(href, '_blank');
+                return;
+            }
             window.location.href = href;
         }
     });
